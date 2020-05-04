@@ -1,0 +1,156 @@
+<div class="navbar">
+    <div class=" col-lg-12 col-md-12 text-hover" style="background-color: #555">
+
+        <a routerLink="/dashboard"><img src="assets/images/HomeIcon.png"
+                style="width: 4%; height:8%;margin-left: 10px" /><b>Home</b></a>
+        <a routerLink="/profile"><img src="assets/images/ProfileIcon.png"
+                style="width: 4%; height:8%;margin-left: 10px" /><b>Profile</b></a>
+        <a class="offset-lg-6 offset-md-6" (click)="logOutUser()"><img src="assets/images/LogoutIcon.png"
+                style="width: 4%; height:8%;margin-left: 10px" /><b>Logout</b></a>
+
+    </div>
+</div>
+
+<br>
+<div class="col-md-10 col-lg-10">
+    <h3 class="text-primary" style="margin-left: 20%;">Edit Profile</h3>
+    <br>
+    <form [formGroup]="editProfileForm" (ngSubmit)="editUser()">
+        <!-- Name Text Box -->
+        <div class="form-group row">
+            <label for="customerName" class="required col-lg-4 text-right font-weight-bold">
+                Name :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="Name" formControlName="customerName" />
+
+                <div *ngIf="submitted && editProfileForm.controls.customerName.errors">
+                    <div class="text-danger" *ngIf="editProfileForm.controls.customerName.errors.required">
+                        Name is required..!
+                    </div>
+                    <div class="text-danger" *ngIf="editProfileForm.controls.customerName.errors.pattern">
+                       Name should not be Numrical...<p>Name should start with Capital letter..</p>
+                     </div>
+                    <div class="text-danger" *ngIf="editProfileForm.controls.customerName.errors.maxlength">
+                        Maximum 30 characters long..!
+                     </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <!--  End of Name Text Box -->
+
+        <!-- Age Text Box -->
+        <div class="form-group row">
+            <label for="age" class="required col-lg-4 text-right font-weight-bold">
+                Age :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="Age" formControlName="age" />
+
+                <div *ngIf="submitted && editProfileForm.controls.age.errors">
+                    <div class="text-danger" *ngIf="editProfileForm.controls.age.errors.required">
+                        Age is required..!
+
+                    </div>
+                    <div class="text-danger" *ngIf="editProfileForm.controls.age.errors.min">
+                        Age should be minimum 15 years..!
+                    </div>
+                    <div class="text-danger" *ngIf="editProfileForm.controls.age.errors.pattern">
+                        Only numbers expected..<p>Age should not start with zero</p>
+                    </div>
+                    <div class="text-danger" *ngIf="editProfileForm.controls.age.errors.maxlength">
+                        Age can be maximum 3 digits long...
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <!--  End of Age Text Box -->
+
+        <!-- Gender Text Box -->
+        <div class="form-group row">
+            <label for="gender" class="required col-lg-4 text-right font-weight-bold">
+                Gender :
+            </label>
+            <div class="col-lg-8">
+                <select class="form-control" formControlName="gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Transgender</option>
+                </select>
+                <div *ngIf="submitted && editProfileForm.controls.gender.errors">
+                    <div class="text-danger" *ngIf="editProfileForm.controls.gender.errors.required">
+                        Gender is required..!
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--  End of Last Name Text Box -->
+
+        <!-- Mobile Number Text Box -->
+        <div class="form-group row">
+            <label for="mobileNumber" class="required col-lg-4 text-right font-weight-bold">
+                Mobile Number :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="Mobile Number" formControlName="mobileNumber" />
+
+                <div *ngIf="submitted && editProfileForm.controls.mobileNumber.errors">
+                    <div class="text-danger" *ngIf="editProfileForm.controls.mobileNumber.errors.required">
+                        Mobile Number is required..!
+
+                    </div>
+                    <div class="text-danger" *ngIf="editProfileForm.controls.mobileNumber.errors.pattern">
+                        Mobile Number must be 10 digits and should be numeric..!
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <!--  End of Mobile Number Text Box -->
+
+        <!-- Email Text Box -->
+        <div class="form-group row">
+            <label for="emailId" class="required col-lg-4 text-right font-weight-bold">
+                Email :
+            </label>
+            <div class="col-lg-8">
+                <input type="emailId" class="form-control " placeholder="Email" formControlName="emailId" />
+
+                <div *ngIf="submitted && editProfileForm.controls.emailId.errors">
+                    <div class="text-danger" *ngIf="editProfileForm.controls.emailId.errors.required">
+                        Email is required..!
+
+                    </div>
+                    <div class="text-danger" *ngIf="editProfileForm.controls.emailId.errors.emailId">
+                        Invalid Email Address..!
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        
+        <!--  End of Email Text Box -->
+
+        <div class="text-right">
+            <a class="btn btn-outline-primary" routerLink="/change-password">Change Password</a>
+            &nbsp;&nbsp;
+            <button class="btn btn-outline-success" type="submit">Save</button>&nbsp;&nbsp;
+            <a class="btn btn-outline-danger" routerLink="/dashboard">Cancel</a>
+
+        </div>
+    </form>
+    <br>
+</div>

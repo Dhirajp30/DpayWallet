@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row ">
+        <div style="padding: 5px" class=" col-lg-12 col-md-12 bg-warning text-dark text-center">
+
+            <img src="assets/images/Dpaylogo.png" style="width: 10%; height:25%;margin: 10px">
+            <h1>
+                {{ title | uppercase }}
+            </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-7 col-md-7">
+            <router-outlet> </router-outlet>
+        </div>
+
+        <div class="col-lg-5 col-md-5">
+            <div style="margin-top: 10%; margin-bottom: 10%">
+                <img src="assets/images/Digital-Wallet.png" style="width: 100%; height:100%">
+            </div>
+        </div>
+    </div>
+    <!-- end of row -->
+    <footer>
+
+        <div class="row">
+            <div class="col-lg-7 col-md-7">
+                <span class="text-danger">
+                    <strong>This site is copyright &copy; to Dpay Wallet
+
+                        {{ todaysDate | date:'yyyy'}}. All rights are reserved here.
+                    </strong>
+                </span>
+            </div>
+            <div class="col-lg-5 col-md-5">
+                <div class="text-center text-primary">
+                    <h4>{{todaysDate | date:'medium'}}</h4>
+                </div>
+            </div>
+
+        </div>
+        <!-- end of row -->
+
+    </footer>
+</div>

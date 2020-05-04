@@ -1,0 +1,252 @@
+<br>
+<div class="col-md-12 col-lg-12">
+    <h3 class="text-primary" style="margin-left: 25%;">Register</h3>
+    <br>
+    <form [formGroup]="addForm" (ngSubmit)="addUser()">
+        <!-- Name Text Box -->
+        <div class="form-group row">
+            <label for="customerName" class="required col-lg-4 text-right font-weight-bold">
+                Name :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="Name" formControlName="customerName" />
+
+                <div *ngIf="submitted && addForm.controls.customerName.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.customerName.errors.required">
+                        Name is required..!
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.customerName.errors.pattern">
+                        Name should start with Capital letter..
+                     </div>
+                    <div class="text-danger" *ngIf="addForm.controls.customerName.errors.invalidMsg">
+                       Numeric values not allowed....
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.customerName.errors.maxlength">
+                        Maximum 30 characters long..!
+                     </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <!--  End of Name Text Box -->
+
+        <!-- Age Text Box -->
+        <div class="form-group row">
+            <label for="age" class="required col-lg-4 text-right font-weight-bold">
+                Age :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="Age" formControlName="age" />
+
+                <div *ngIf="submitted && addForm.controls.age.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.age.errors.required">
+                        Age is required..!
+
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.age.errors.min">
+                        Age should be Minimum 15..!
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.age.errors.pattern">
+                        Only numbers expected..
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.age.errors.invalidMsg">
+                        Should not start with zero..
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.age.errors.maxlength">
+                        Age can be maximum 3 digits long...
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--  End of Age Text Box -->
+
+        <!-- Gender Text Box -->
+        <div class="form-group row">
+            <label for="gender" class="required col-lg-4 text-right font-weight-bold">
+                Gender :
+            </label>
+            <div class="col-lg-8">
+                <select class="form-control" formControlName="gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Transgender</option>
+                </select>
+                <div *ngIf="submitted && addForm.controls.gender.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.gender.errors.required">
+                        Gender is required..!
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--  End of Last Name Text Box -->
+
+        <!-- Mobile Number Text Box -->
+        <div class="form-group row">
+            <label for="mobileNumber" class="required col-lg-4 text-right font-weight-bold">
+                Mobile Number :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="Mobile Number" formControlName="mobileNumber" />
+
+                <div *ngIf="submitted && addForm.controls.mobileNumber.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.mobileNumber.errors.required">
+                        Mobile Number is required..!
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.mobileNumber.errors.pattern">
+                        Mobile Number should start from 6 to 9 ..!
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.mobileNumber.errors.invalidMsg">
+                        Mobile Number should be numeric..!
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.mobileNumber.errors.minlength">
+                        Mobile Number should be 10 digit long..!
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.mobileNumber.errors.maxlength">
+                        Mobile Number should be 10 digit long..!
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--  End of Mobile Number Text Box -->
+
+        <!-- Email Text Box -->
+        <div class="form-group row">
+            <label for="emailId" class="required col-lg-4 text-right font-weight-bold">
+                Email :
+            </label>
+            <div class="col-lg-8">
+                <input type="emailId" class="form-control " placeholder="Email" formControlName="emailId" />
+
+                <div *ngIf="submitted && addForm.controls.emailId.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.emailId.errors.required">
+                        Email is required..!
+
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.emailId.errors.email">
+                        Enter Valid Email Address..!
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.emailId.errors.maxlength">
+                        Maximum 50 characters long..
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <!--  End of Email Text Box -->
+
+        <!-- Password Text Box -->
+        <div class="form-group row">
+            <label for="password" class="required col-lg-4 text-right font-weight-bold">
+                Password :
+            </label>
+            <div class="col-lg-8">
+                <input type="password" class="form-control " placeholder="Password" formControlName="password" />
+
+                <div *ngIf="submitted && addForm.controls.password.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.password.errors.required">
+                        Password is required..!
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.password.errors.pattern">
+                        Password should have at least One uppercase,one lowercase letter,one numeric
+                        ,one special character.
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.password.errors.minlength">
+                        Minimum lenght should be 8..
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.password.errors.maxlength">
+                        Maximum lenght should be 14..
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="confirmPass" class="required col-lg-4 text-right font-weight-bold">
+                Confirm Password :
+            </label>
+            <div class="col-lg-8">
+                <input type="password" class="form-control " placeholder="Confirm Password"
+                    formControlName="confirmPass" />
+
+                <div *ngIf="submitted && addForm.controls.confirmPass.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.confirmPass.errors.required">
+                        Confirm Password is required..!
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.confirmPass.errors.pattern">
+                        Password should have at least One uppercase,one lowercase letter,one numeric
+                        ,one special character.
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.confirmPass.errors.minlength">
+                        Minimum lenght should be 8..
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.confirmPass.errors.maxlength">
+                        Maximum lenght should be 14..
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  End of Password Text Box -->
+
+        <div class="form-group row">
+            <label for="securityQuestion" class="required col-lg-4 text-right font-weight-bold">Security Question :
+            </label>
+            <div class="col-lg-8">
+                <select class="form-control" formControlName="securityQuestion">
+                    <option>Favourite Pet Name</option>
+                    <option>Your Vehicle Number</option>
+                    <option>Favourite City</option>
+                </select>
+                <div *ngIf="submitted && addForm.controls.securityQuestion.errors" class="error">
+                    <div class="text-danger" *ngIf="addForm.controls.securityQuestion.errors.required">
+                        Security Question is Required..
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Of Security Question -->
+
+
+        <div class="form-group row">
+            <label for="answer" class="required col-lg-4 text-right font-weight-bold">Answer : </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" formControlName="answer" placeholder="Answer" />
+                <div *ngIf="submitted && addForm.controls.answer.errors" class="error">
+                    <div class="text-danger" *ngIf="addForm.controls.answer.errors.required">
+                        Answer is Required..
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.answer.errors.pattern">
+                        Answer should be Minimum 4 characters long...
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.answer.errors.maxlength">
+                        Maximum 20 characters long...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Of Answer -->
+
+        <div *ngIf="passMatchInvalid">
+            <div class="text-danger text-right">
+                Password and Confirm Password do not match..! Enter same and Submit Again.
+            </div>
+        </div>
+        <br>
+        <div class="text-right">
+            <button class="btn btn-outline-success" type="submit">Submit</button>&nbsp;&nbsp;
+            <button class="btn btn-outline-warning" type="reset">Reset</button> &nbsp;&nbsp;
+            <a class="btn btn-outline-danger" routerLink="/home">Cancel</a>
+
+        </div>
+
+    </form>
+    <br>
+</div>

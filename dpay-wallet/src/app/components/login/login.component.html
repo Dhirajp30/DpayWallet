@@ -1,0 +1,57 @@
+<br><br>
+<div class="col-lg-7 col-md-7 offset-lg-3 offset-md-3">
+    <h3 class="text-primary">Login</h3>
+    <br>
+
+    <form [formGroup]="loginForm" (ngSubmit)="verifyLogin()">
+        <div class="form-group">
+            <label for="mobileNumber" class="required">Mobile Number : </label>
+            <input type="text" class="form-control" formControlName="mobileNumber" placeholder="Mobile Number" />
+
+            <div *ngIf="submitted && loginForm.controls.mobileNumber.errors" class="error">
+                <div class="text-danger" *ngIf="loginForm.controls.mobileNumber.errors.required">
+                    Mobile Number is Required..
+                </div>
+                <div class="text-danger" *ngIf="loginForm.controls.mobileNumber.errors.pattern">
+                    Mobile Number must be numeric..!
+                </div>
+                <div class="text-danger" *ngIf="loginForm.controls.mobileNumber.errors.minlength || loginForm.controls.mobileNumber.errors.maxlength">
+                    Mobile Number must be 10 digits long..!
+                </div>
+            </div>
+
+        </div>
+        <!-- End Of Mobile Number -->
+
+
+        <div class="form-group">
+            <label for="password" class="required">Password : </label>
+            <input type="password" class="form-control" formControlName="password" placeholder="Password" />
+            <!-- *ngIf, *ngFor, *ngSwitch -->
+            <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
+                <div class="text-danger" *ngIf="loginForm.controls.password.errors.required">
+                    Password is Required..
+                </div>
+
+            </div>
+        </div>
+        <!-- End Of password -->
+
+        <div *ngIf="invalidLogin">
+            <div class="text-danger">
+                Invalid Email or Password
+            </div>
+
+        </div>
+        <br>
+
+        <button class="btn btn-outline-success">Login</button> &nbsp;
+        <a class="btn btn-outline-danger" routerLink="/home">Cancel</a>&nbsp;&nbsp;
+        <a class=" text-primary" routerLink="/forgot-password"><b>Forgot Password?</b></a><br><br>
+        <a class=" text-primary" routerLink="/register">
+            <h6><b>Don't have account, create new one</b></h6>
+        </a>
+
+        <br>
+    </form>
+</div>

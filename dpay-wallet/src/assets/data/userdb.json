@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Dhiraj Patil",
+      "age": "22",
+      "gender": "Male",
+      "mobileNumber": "9876543212",
+      "email": "dhiraj@gmail.com",
+      "password": "dhiraj@123",
+      "securityQuestion": "Favourite Pet Name",
+      "answer": "Rocky"
+    },
+    {
+      "id": "2",
+      "name": "Mahesh Almale",
+      "age": "25",
+      "gender": "Male",
+      "mobileNumber": "7876543212",
+      "email": "mahesh@gmail.com",
+      "password": "mahesh@123",
+      "securityQuestion": "Favourite Pet Name",
+      "answer": "Rocky"
+    },
+    {
+      "id": "3",
+      "name": "Yash Bhirud",
+      "age": "27",
+      "gender": "Male",
+      "mobileNumber": "9876543212",
+      "email": "yash@gmail.com",
+      "password": "yash123",
+      "securityQuestion": "Favourite Pet Name",
+      "answer": "Rocky"
+    },
+    {
+      "name": "Pratik",
+      "age": "21",
+      "gender": "Male",
+      "mobileNumber": "9876543212",
+      "email": "pratik@hmail",
+      "password": "pratik",
+      "securityQuestion": "Favourite Pet Name",
+      "answer": "Rocky",
+      "id": "4"
+    },
+    {
+      "name": "Harshal",
+      "age": "25",
+      "gender": "Male",
+      "mobileNumber": "7865431234",
+      "email": "harshal@gmail.com",
+      "password": "harshal123",
+      "securityQuestion": "Your Vehicle Number",
+      "answer": "1234",
+      "id": "5"
+    },
+    {
+      "name": "Abc Annb",
+      "age": "23",
+      "gender": "Female",
+      "mobileNumber": "7865432345",
+      "email": "abc@hh",
+      "password": "1234",
+      "securityQuestion": "Your Vehicle Number",
+      "answer": "6543",
+      "id": "TXsMwDv"
+    },
+    {
+      "name": "Harshal PAtil",
+      "age": "32",
+      "gender": "Male",
+      "mobileNumber": "9087654321",
+      "email": "hars@g",
+      "password": "Harshl@123",
+      "confirmPass": "Harshal@123",
+      "securityQuestion": "Favourite City",
+      "answer": "Pachora",
+      "id": "wtok1CT"
+    }
+  ]
+}
